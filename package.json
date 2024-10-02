@@ -1,0 +1,20 @@
+{
+    "name": "nodejs-hallbooking",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "commonjs",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "config": "^3.3.12",
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "mongoose": "^8.7.0",
+        "nodemon": "^3.1.1" 
+    }
+}
