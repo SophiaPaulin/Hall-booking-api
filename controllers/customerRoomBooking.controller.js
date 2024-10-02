@@ -42,9 +42,9 @@ module.exports.getBookedRoomData = async (req, res) => {
         // const data = await CustomerBookedRoom.findById(id);
         // res.json({ data });
 
-        const data = await CustomerBookedRoom.findById(id);
+        const data = await CustomerBookedRoom.findById({_id:id});
         if (data) {
-            const roomsData = await Room.findOne({ _id: data.roomId });
+            const roomData = await Room.findOne({ _id: data.roomId });
             const customerData = await Customer.findOne({ _id: data.customerId });
             if (!roomData) {
                 return res.status(404).json({
@@ -60,7 +60,7 @@ module.exports.getBookedRoomData = async (req, res) => {
             }
             return res.status(200).json({
                 status: true,
-                roomsData,
+                roomData,
                 customerData,
                 bookedData: data
             });
